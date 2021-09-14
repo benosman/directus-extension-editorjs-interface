@@ -4,9 +4,28 @@
 
 .ce-toolbar__content,
 .ce-block__content {
-	max-width: unset;
-	margin-right: 34px;
+	max-width: 750px !important;
 	margin-left: 34px;
+	margin-right: 34px;
+}
+
+.ce-block__content {
+	position: relative;
+	max-width: 750px;
+	margin: 0 auto;
+	-webkit-transition: background-color .15s ease;
+	transition: background-color .15s ease;
+}
+
+.ce-toolbar__content {
+	max-width: 750px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.ce-block--stretched,
+.ce-block--stretched .ce-block__content {
+	max-width: none !important;
 }
 
 .codex-editor .ce-block {
@@ -112,7 +131,6 @@
 .codex-editor .ce-block iframe,
 .codex-editor .ce-block img {
 	max-width: 100%;
-	height: auto;
 	border-radius: 4px;
 }
 

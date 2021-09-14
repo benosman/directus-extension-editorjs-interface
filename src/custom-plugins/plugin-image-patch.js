@@ -22,8 +22,7 @@ export default class extends ImageTool {
 	set image(file) {
 		this._data.file = file || {};
 		if (file && file.url) {
-			const imageUrl = this.config.uploader.addTokenToURL(file.url) + '&key=system-large-contain';
-			this.ui.fillImage(imageUrl);
+			const imageUrl = this.config.uploader.addTokenToURL(file.url);			this.ui.fillImage(imageUrl);
 		}
 	}
 }

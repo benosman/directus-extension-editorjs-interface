@@ -40,7 +40,7 @@ import TableTool from '@editorjs/table';
 import CodeTool from '@editorjs/code';
 import HeaderTool from '@editorjs/header';
 import UnderlineTool from '@editorjs/underline';
-import EmbedTool from '@editorjs/embed';
+import EmbedTool from './custom-plugins/plugin-embed-patch';
 import MarkerTool from '@editorjs/marker';
 import RawToolTool from '@editorjs/raw';
 import InlineCodeTool from '@editorjs/inline-code';

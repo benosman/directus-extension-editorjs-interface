@@ -85,5 +85,40 @@ export default {
 		embedUrl: 'https://player.captivate.fm/episode/<%= remote_id %>',
 		html: "<iframe style=\"width: 100%; height: 170px;\" frameBorder=\"no\" scrolling=\"no\" seamless></iframe>",
 		height: 170,
-	}
+	},
+	podbean: {
+		regex: /https?:\/\/www\.podbean\.com\/(?:ew)\/pb-([\w\d-]+)/,
+		embedUrl: 'https://www.podbean.com/player-v2/?i=<%= remote_id %>-pb&from=embed&square=1&share=1&download=1&skin=1&btn-skin=7&size=160',
+		html: "<iframe allowTransparency=\"true\" style=\"border: none; min-width: min(100%, 430px);\" " +
+			"scrolling=\"no\" data-name=\"pb-iframe-player\" allowFullScreen=\"\" width=\"100%\" height=\"160\"></iframe>",
+		height: 160,
+	},
+	applePodcastEpisode: {
+		regex: /https?:\/\/podcasts.apple.com\/\w+\/podcast\/(?:[\w-]+)\/(id[\d]+\?i=\d+)/,
+		embedUrl: 'https://embed.podcasts.apple.com/us/podcast/<%= remote_id %>',
+		html: "<iframe allow=\"autoplay *; encrypted-media *; fullscreen *\" frameBorder=\"0\" height=\"170\"\n" +
+			" style=\"width:100%;max-width:660px;overflow:hidden;background:transparent;\"\n" +
+			" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation\"></iframe>",
+		height: 170,
+	},
+	applePodcastChannel: {
+		regex: /https?:\/\/podcasts.apple.com\/\w+\/podcast\/(?:[\w-]+)\/(id[\d]+)/,
+		embedUrl: 'https://embed.podcasts.apple.com/us/podcast/<%= remote_id %>',
+		html: "<iframe allow=\"autoplay *; encrypted-media *; fullscreen *\" frameBorder=\"0\" height=\"450\"\n" +
+			" style=\"width:100%;max-width:660px;overflow:hidden;background:transparent;\"\n" +
+			" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation\"></iframe>",
+		height: 450,
+	},
+	anchor: {
+		regex: /https?:\/\/anchor.fm\/(?:[\w\d-]+)\/episodes\/([\w\d-]+\/[\w\d-]+)/,
+		embedUrl: 'https://anchor.fm/podcast/embed/episodes/<%= remote_id %>',
+		html: "<iframe height=\"102px\" width=\"400px\" frameBorder=\"0\" scrolling=\"no\"></iframe>",
+		height: 180,
+	},
+	simplecast: {
+		regex: /https?:\/\/player.simplecast.com\/([\w\d-]+)/,
+		embedUrl: 'https://player.simplecast.com/<%= remote_id %>?dark=false',
+		html: "<iframe height=\"200px\" width=\"100%\" frameBorder=\"no\" scrolling=\"no\" seamless></iframe>",
+		height: 200,
+	},
 };
